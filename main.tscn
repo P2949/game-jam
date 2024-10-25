@@ -1,13 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjimg6bdahnis"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6th3"]
-size = Vector2(1.08701, 6.23331)
+[gd_scene format=3 uid="uid://cjimg6bdahnis"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-modulate = Color(0.651067, 0.32867, 0.174802, 1)
-position = Vector2(175.744, 98.5532)
-scale = Vector2(13.3513, -2.38936)
-shape = SubResource("RectangleShape2D_v6th3")
-debug_color = Color(0.990502, 0, 0.277534, 0.42)

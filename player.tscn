@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://tf2wm0gxafni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cboij"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_4asns"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_cboij")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+texture = SubResource("ImageTexture_4asns")
+
+[node name="Camera2D" type="Camera2D" parent="."]
