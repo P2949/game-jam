@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx1mp5i00u8xs"
-path.s3tc="res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.s3tc.ctex"
+uid="uid://ip3g3pk7tjnk"
+path="res://.godot/imported/RightWingAlternative.png-e67742900b313e96d2b417d4e1f088b0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://michael.english_0.jpg"
-dest_files=["res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.s3tc.ctex"]
+source_file="res://Player_Model/RightWingAlternative.png"
+dest_files=["res://.godot/imported/RightWingAlternative.png-e67742900b313e96d2b417d4e1f088b0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
