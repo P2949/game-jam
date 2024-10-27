@@ -37,15 +37,23 @@ public partial class Movement : CharacterBody2D
 
 		// Ground velocity
 		_targetVelocity.X = direction.X * Speed;
-
+		
+		
+		
 		// Vertical velocity
 		if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
 		{
 			_targetVelocity.Y += FallAcceleration * (float)delta;
 		}
+		
 
 		// Moving the character
 		Velocity = _targetVelocity;
 		MoveAndSlide();
+		
+		if (IsOnFloor() || IsOnCeiling()) {
+			_targetVelocity.Y = 0;
+		}
+		
 	}
 }
