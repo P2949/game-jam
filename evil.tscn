@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqadudt4co5sr"]
+
+[ext_resource type="Script" path="res://Player_Scripts/EnemyBehavior/EvilMichaelEnglish.cs" id="1_hr5dm"]
+[ext_resource type="Texture2D" uid="uid://ldp5yaqf5cmg" path="res://Evilmichael.english.jpg" id="2_56scx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myvfe"]
+size = Vector2(38, 37)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EvilMichaelEnglish" type="CharacterBody2D" parent="."]
+position = Vector2(627, 563)
+script = ExtResource("1_hr5dm")
+JumpVelocity = -400.0
+Speed = 250
+FallAcceleration = 500
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilMichaelEnglish"]
+shape = SubResource("RectangleShape2D_myvfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="EvilMichaelEnglish"]
+scale = Vector2(0.336284, 0.246667)
+texture = ExtResource("2_56scx")
