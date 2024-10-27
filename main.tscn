@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=15 format=4 uid="uid://cjimg6bdahnis"]
 
 [ext_resource type="Texture2D" uid="uid://cf0xlv5imf5ql" path="res://Tile_Map/Tile_Sheet_V1.png" id="1_nkk0q"]
@@ -5,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cx1mp5i00u8xs" path="res://michael.english_0.jpg" id="3_55gje"]
 [ext_resource type="Script" path="res://Player_Scripts/EnemyBehavior/EvilMichaelEnglish.cs" id="4_7suka"]
 [ext_resource type="Texture2D" uid="uid://ldp5yaqf5cmg" path="res://Evilmichael.english.jpg" id="5_wpjak"]
+
+[gd_scene load_steps=10 format=4 uid="uid://cjimg6bdahnis"]
+
+[ext_resource type="Texture2D" uid="uid://cf0xlv5imf5ql" path="res://Tile_Map/Tile_Sheet_V1.png" id="1_nkk0q"]
+[ext_resource type="PackedScene" uid="uid://tf2wm0gxafni" path="res://player.tscn" id="2_rg6gm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gjt0a"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -48,6 +54,7 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hihbh")
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtkwm"]
 size = Vector2(34, 32)
 
@@ -88,3 +95,5 @@ shape = SubResource("RectangleShape2D_gw3bx")
 [node name="Sprite2D" type="Sprite2D" parent="EvilMichaelEnglish"]
 scale = Vector2(0.336284, 0.246667)
 texture = ExtResource("5_wpjak")
+
+[node name="Node2D" parent="." instance=ExtResource("2_rg6gm")]
