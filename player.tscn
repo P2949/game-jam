@@ -1,17 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://tf2wm0gxafni"]
+[gd_scene load_steps=4 format=3 uid="uid://tf2wm0gxafni"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cboij"]
+[ext_resource type="Script" path="res://Player_Scripts/Movement.cs" id="1_b8ydt"]
+[ext_resource type="Texture2D" uid="uid://cx1mp5i00u8xs" path="res://michael.english_0.jpg" id="2_hb8fg"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_4asns"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk0es"]
+size = Vector2(34, 32)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(583, 592)
+script = ExtResource("1_b8ydt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_cboij")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(3.05176e-05, 0)
+shape = SubResource("RectangleShape2D_lk0es")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
-texture = SubResource("ImageTexture_4asns")
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-1.52588e-05, -8.58307e-06)
+scale = Vector2(0.300885, 0.213333)
+texture = ExtResource("2_hb8fg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
