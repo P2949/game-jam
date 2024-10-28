@@ -33,6 +33,5 @@ public partial class EvilMichaelEnglish : EnemyMovement
 	
 	public override void _Ready() {
 		MovementLoop();
-		GD.Print("h");
 	}
 }

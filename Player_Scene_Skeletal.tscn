@@ -19,7 +19,7 @@ position = Vector2(-0.00444078, -0.00268483)
 
 [node name="LeftWingAlternative" type="Sprite2D" parent="Body"]
 texture_filter = 1
-position = Vector2(10.2007, 0.879508)
+position = Vector2(10.2007, 0.87951)
 texture = ExtResource("1_wpvh8")
 offset = Vector2(16, -14)
 
@@ -137,3 +137,9 @@ remote_path = NodePath("../../../../../Body/Dress")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.99556, 17.8152)
 shape = SubResource("RectangleShape2D_efjhy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 100.0
