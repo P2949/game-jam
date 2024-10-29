@@ -14,7 +14,6 @@ script = ExtResource("1_hr5dm")
 JumpVelocity = -400.0
 Speed = 250
 FallAcceleration = 500
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EvilMichaelEnglish"]
 shape = SubResource("RectangleShape2D_myvfe")
