@@ -33,6 +33,6 @@ public partial class EvilMichaelEnglish : EnemyMovement
 	
 	public override void _Ready() {
 		MovementLoop();
-		GD.Print("EVIL MICHAEL ENGLISH HAS AWOKEN");
+		GD.Print("h");
 	}
 }

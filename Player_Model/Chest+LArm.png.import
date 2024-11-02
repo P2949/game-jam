@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc28foo82jnr3"
-path="res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.ctex"
+uid="uid://lp3tij3o71h"
+path="res://.godot/imported/Chest+LArm.png-1d18bfde2062c4ab12aab1c491850845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://michael.english_0.jpg"
-dest_files=["res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.ctex"]
+source_file="res://Player_Model/Chest+LArm.png"
+dest_files=["res://.godot/imported/Chest+LArm.png-1d18bfde2062c4ab12aab1c491850845.ctex"]
 
 [params]
 

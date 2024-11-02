@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc28foo82jnr3"
-path="res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.ctex"
+uid="uid://b5t3qms73dl7a"
+path="res://.godot/imported/RightArm.png-c70139f88ab497a87f96787b1a3f2c14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://michael.english_0.jpg"
-dest_files=["res://.godot/imported/michael.english_0.jpg-1885ca32435f900a963330672074799e.ctex"]
+source_file="res://Player_Model/RightArm.png"
+dest_files=["res://.godot/imported/RightArm.png-c70139f88ab497a87f96787b1a3f2c14.ctex"]
 
 [params]
 

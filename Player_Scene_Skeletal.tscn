@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://n5bb430h5vcc"]
+
+[ext_resource type="Texture2D" uid="uid://c7h1npy5iu2ne" path="res://Player_Model/LeftWingAlternative.png" id="1_wpvh8"]
+[ext_resource type="Texture2D" uid="uid://ip3g3pk7tjnk" path="res://Player_Model/RightWingAlternative.png" id="2_bp5nv"]
+[ext_resource type="Texture2D" uid="uid://lp3tij3o71h" path="res://Player_Model/Chest+LArm.png" id="3_pmv4x"]
+[ext_resource type="Texture2D" uid="uid://duhqv5yysf3s7" path="res://Player_Model/Dress.png" id="4_cs7k3"]
+[ext_resource type="Texture2D" uid="uid://b1eg4kvfgsf8c" path="res://Player_Model/Cross.drawio.png" id="5_w3x44"]
+[ext_resource type="Texture2D" uid="uid://b5t3qms73dl7a" path="res://Player_Model/RightArm.png" id="6_8eqxr"]
+[ext_resource type="Texture2D" uid="uid://cev4jcr84iigl" path="res://Player_Model/RightForarm.png" id="7_swa1o"]
+[ext_resource type="Texture2D" uid="uid://ckrow034i6a5f" path="res://Player_Model/Michael-English-2.png" id="8_5tvne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efjhy"]
+size = Vector2(76, 90.375)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-0.00444078, -0.00268483)
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="LeftWingAlternative" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(10.2007, 0.87951)
+texture = ExtResource("1_wpvh8")
+offset = Vector2(16, -14)
+
+[node name="RightWingAlternative" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(-9.79928, 1.87951)
+texture = ExtResource("2_bp5nv")
+offset = Vector2(-21, -12)
+
+[node name="Chest+lArm" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(0.200716, 3.87951)
+texture = ExtResource("3_pmv4x")
+offset = Vector2(0, 9)
+
+[node name="Dress" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(0.200716, 24.8795)
+texture = ExtResource("4_cs7k3")
+offset = Vector2(1, 15)
+
+[node name="Cross_drawio" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(-6.79928, 25.8795)
+rotation = 1.41895
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("5_w3x44")
+offset = Vector2(-29.8291, -62.7915)
+
+[node name="RightArm" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(-6.79928, 4.87951)
+texture = ExtResource("6_8eqxr")
+offset = Vector2(4, 10)
+
+[node name="RightForarm" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(-9.79928, 17.8795)
+texture = ExtResource("7_swa1o")
+offset = Vector2(7, -3)
+
+[node name="Head" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(-1.79928, -9.05792)
+scale = Vector2(-0.0448599, 0.0436068)
+texture = ExtResource("8_5tvne")
+
+[node name="Skeleton" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Skeleton"]
+
+[node name="Chest" type="Bone2D" parent="Skeleton/Skeleton2D"]
+position = Vector2(0.200716, 3.87951)
+rest = Transform2D(1, 0, 0, 1, 0.00444078, 0.00268483)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest"]
+remote_path = NodePath("../../../../Body/Chest+lArm")
+
+[node name="WingR" type="Bone2D" parent="Skeleton/Skeleton2D/Chest"]
+position = Vector2(-10, -2)
+rest = Transform2D(1, 0, 0, 1, -10, -2)
+auto_calculate_length_and_angle = false
+length = 24.607
+bone_angle = -144.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/WingR"]
+remote_path = NodePath("../../../../../Body/RightWingAlternative")
+
+[node name="WingL" type="Bone2D" parent="Skeleton/Skeleton2D/Chest"]
+position = Vector2(10, -3)
+rest = Transform2D(1, 0, 0, 1, 10, -3)
+auto_calculate_length_and_angle = false
+length = 23.869
+bone_angle = -44.308
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/WingL"]
+remote_path = NodePath("../../../../../Body/LeftWingAlternative")
+
+[node name="RightArm" type="Bone2D" parent="Skeleton/Skeleton2D/Chest"]
+position = Vector2(-7, 1)
+rest = Transform2D(1, 0, 0, 1, -7, 1)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/RightArm"]
+remote_path = NodePath("../../../../../Body/RightArm")
+
+[node name="RightForarm" type="Bone2D" parent="Skeleton/Skeleton2D/Chest/RightArm"]
+position = Vector2(-3, 13)
+rest = Transform2D(1, 0, 0, 1, -3, 13)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/RightArm/RightForarm"]
+remote_path = NodePath("../../../../../../Body/RightForarm")
+
+[node name="Cross" type="Bone2D" parent="Skeleton/Skeleton2D/Chest/RightArm/RightForarm"]
+position = Vector2(3, 8)
+rest = Transform2D(1, 0, 0, 1, 3, 8)
+auto_calculate_length_and_angle = false
+length = 23.869
+bone_angle = -11.077
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/RightArm/RightForarm/Cross"]
+rotation = 1.41895
+scale = Vector2(0.065, 0.065)
+remote_path = NodePath("../../../../../../../Body/Cross_drawio")
+
+[node name="Legs" type="Bone2D" parent="Skeleton/Skeleton2D/Chest"]
+position = Vector2(0, 21)
+rest = Transform2D(1, 0, 0, 1, 0, 21)
+auto_calculate_length_and_angle = false
+length = 26.219
+bone_angle = 91.765
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/Skeleton2D/Chest/Legs"]
+remote_path = NodePath("../../../../../Body/Dress")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.99556, 17.8152)
+shape = SubResource("RectangleShape2D_efjhy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 2.0

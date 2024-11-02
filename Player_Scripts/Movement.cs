@@ -3,24 +3,25 @@ using System;
 
 public partial class Movement : CharacterBody2D
 {
+	
 	public const float JumpVelocity = -400.0f;
-	[Export]
-	public int Speed { get; set; } = 300;
+	
+	// player speed
+	[Export] public int Speed { get; set; } = 500;
+	
 	// The downward acceleration when in the air, in meters per second squared.
-	[Export]
-	public int FallAcceleration { get; set; } = 200;
+	[Export] public int FallAcceleration { get; set; } = 200;
 
 	private Vector2 _targetVelocity = Vector2.Zero;
 
-	public override void _PhysicsProcess(double delta)
+	public async override void _PhysicsProcess(double delta)
 	{
 		var direction = Vector2.Zero;
 
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (Input.IsActionPressed("jump") && IsOnFloor())
 		{
-			_targetVelocity.Y = JumpVelocity;
-		}
-
+			_targetVelocity.Y += JumpVelocity;
+		} 
 		if (Input.IsActionPressed("move_right"))
 		{
 			direction.X += 1.0f;
@@ -29,13 +30,12 @@ public partial class Movement : CharacterBody2D
 		{
 			direction.X -= 1.0f;
 		}
-
 		if (direction != Vector2.Zero)
 		{
 			direction = direction.Normalized();
 		}
 
-		// Ground velocity
+		// Ground velocity (best described as X axis velocity)
 		_targetVelocity.X = direction.X * Speed;
 		
 		
@@ -51,7 +51,7 @@ public partial class Movement : CharacterBody2D
 		Velocity = _targetVelocity;
 		MoveAndSlide();
 		
-		if (IsOnFloor() || IsOnCeiling()) {
+		if (IsOnFloor() || IsOnCeiling()) { // leo doing god's work
 			_targetVelocity.Y = 0;
 		}
 		
