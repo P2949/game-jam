@@ -22,7 +22,6 @@ public abstract partial class EnemyMovement : CharacterBody2D {
 		Func<bool> waitUntilCondition = relativeX <= 0 ? new Func<bool>(() => { return moveXDir >= 0; }) : new Func<bool>(() => { return moveXDir <= 0; });
 		
 		await AsyncUtils.WaitUntil(condition: waitUntilCondition, checkFreqMS: 40);
-		GD.Print(moveXDir);
 	}
 	
 	public void Jump() {
@@ -58,7 +57,6 @@ public abstract partial class EnemyMovement : CharacterBody2D {
 
 		// Ground velocity
 		_targetVelocity.X = direction.X * Speed;
-		GD.Print(Speed);
 		
 		
 		
