@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cf0xlv5imf5ql" path="res://Tile_Map/Tile_Sheet_V1.png" id="1_nkk0q"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_q2qgj"]
-[ext_resource type="Script" path="res://Player_Scripts/Movement.cs" id="2_wempp"]
-[ext_resource type="PackedScene" uid="uid://n5bb430h5vcc" path="res://Player_Scene_Skeletal.tscn" id="3_8crxy"]
-[ext_resource type="PackedScene" uid="uid://cqadudt4co5sr" path="res://evil.tscn" id="3_fstud"]
-[ext_resource type="PackedScene" uid="uid://cn8vnepkrk1pr" path="res://canvas_layer.tscn" id="6_rmo3t"]
+[ext_resource type="Script" path="res://Scripts/Movement.cs" id="2_wempp"]
+[ext_resource type="PackedScene" path="res://Player_Scene_Skeletal.tscn" id="3_8crxy"]
+[ext_resource type="PackedScene" uid="uid://pjhviscvf3t2" path="res://Enemies/evil_michael_english.tscn" id="6_a7rbs"]
+[ext_resource type="PackedScene" path="res://canvas_layer.tscn" id="6_rmo3t"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gjt0a"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -56,11 +56,13 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAA
 tile_set = SubResource("TileSet_35lrt")
 script = ExtResource("2_q2qgj")
 
-[node name="Node2D2" parent="." instance=ExtResource("3_fstud")]
-position = Vector2(73, 6)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_8crxy")]
 position = Vector2(501.996, 543.997)
 script = ExtResource("2_wempp")
 
 [node name="CanvasLayer" parent="CharacterBody2D" instance=ExtResource("6_rmo3t")]
+
+[node name="EvilMichaelEnglish" parent="." instance=ExtResource("6_a7rbs")]
+position = Vector2(690, 525)
+jumpVelocity = -250.0
+speed = 150

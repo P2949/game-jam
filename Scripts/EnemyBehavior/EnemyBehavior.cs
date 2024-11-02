@@ -4,16 +4,20 @@ using System.Dynamic;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
-public abstract partial class EnemyMovement : CharacterBody2D {
+public abstract partial class EnemyBehavior : CharacterBody2D {
 	
-	public virtual float JumpVelocity {get; set;}
-	public virtual int Speed {get; set;}
-	public virtual int FallAcceleration {get; set;}
+	public virtual float jumpVelocity {get; set;}
+	public virtual int speed {get; set;}
+	public virtual int fallAcceleration {get; set;}
+	
+	public virtual int health {get; set;}
+	public virtual int maxHealth {get; set;}
+	
+	public virtual float touchDamage {get; set;}
+	
+	
 	Vector2 _targetVelocity = Vector2.Zero;
-	
-	
 	bool jump = false;
-	
 	float moveXDir = 0;
 	
 	public async Task MoveX(float relativeX) {
@@ -35,19 +39,19 @@ public abstract partial class EnemyMovement : CharacterBody2D {
 		
 		if (jump && IsOnFloor())
 		{
-			_targetVelocity.Y = JumpVelocity;
+			_targetVelocity.Y = jumpVelocity;
 			jump = false;
 		}
 
 		if (moveXDir > 0)
 		{
 			direction.X += 1.0f;
-			moveXDir -= 1.0f * Speed;
+			moveXDir -= 1.0f * speed;
 		}
 		else if (moveXDir < 0)
 		{
 			direction.X -= 1.0f;
-			moveXDir += 1.0f * Speed;
+			moveXDir += 1.0f * speed;
 		}
 
 		if (direction != Vector2.Zero)
@@ -56,14 +60,14 @@ public abstract partial class EnemyMovement : CharacterBody2D {
 		}
 
 		// Ground velocity
-		_targetVelocity.X = direction.X * Speed;
+		_targetVelocity.X = direction.X * speed;
 		
 		
 		
 		// Vertical velocity
 		if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
 		{
-			_targetVelocity.Y += FallAcceleration * (float)delta;
+			_targetVelocity.Y += fallAcceleration * (float)delta;
 		}
 		
 

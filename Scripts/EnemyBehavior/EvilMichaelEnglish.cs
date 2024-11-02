@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Godot;
 
-public partial class EvilMichaelEnglish : EnemyMovement
+public partial class EvilMichaelEnglish : EnemyBehavior
 {
-	[Export] public override float JumpVelocity { get; set; } = -200;
-	[Export] public override int Speed { get; set; } = 40;
-	[Export] public override int FallAcceleration { get; set; } = 200;
+	[Export] public override float jumpVelocity { get; set; } = -300;
+	[Export] public override int speed { get; set; } = 100;
+	[Export] public override int fallAcceleration { get; set; } = 300;
+	[Export] public override int maxHealth {get; set;} = 5;
 	
-	
-	public float damage { get; private set; } = 0;
+	public override float touchDamage { get; set; } = 5;
 	bool alive { get; } = true;
 	
 	public async void MovementLoop() {
@@ -33,6 +33,6 @@ public partial class EvilMichaelEnglish : EnemyMovement
 	
 	public override void _Ready() {
 		MovementLoop();
-		GD.Print("h");
+		GD.Print("michael");
 	}
 }
